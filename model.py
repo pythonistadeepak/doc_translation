@@ -1,7 +1,18 @@
-# This code implements a summarization and questioning model using Streamlit, PyPDF2, OpenAI embeddings, and LangChain libraries.
-# It allows users to upload a PDF file, extract text from it, and then input additional text for analysis. Users can also input a query
-# to get answers from the analyzed text. The code utilizes functions for text summarization and question answering, and displays the
-# results using Streamlit interface.
+# This code implements the translation of documents with .docx and .pdf formats using Streamlit, PyPDF2, deep-translator, reportlab and python-docx libraries.
+# It allows users to upload a PDF or word file, extract text from it, and then translate it from ENGLISH to GERMAN without using any LLMs
+# User can download the translated document using DOWNLOAD button at Streamlit interface.
+
+import streamlit as st
+from deep_translator import GoogleTranslator
+import os
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from PyPDF2 import PdfFileReader
+from docx import Document
+
+
+
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.embeddings.openai import OpenAIEmbeddings
