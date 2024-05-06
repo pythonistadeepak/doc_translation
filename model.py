@@ -41,11 +41,11 @@ def main():
     # """
     # This is the main function that runs the Streamlit application.
     # It displays a title, allows users to input their API key, upload a PDF file, and input additional text for analysis.
-    # It also allows users to input a query for question answering.
+    # It also allows users to input a document for translation to German Language.
     # The function calls the summarize_text() and answer_question() functions to perform text summarization and question answering
     # respectively, and displays the results using Streamlit interface.
     # """
-    st.title('Summarization and Questioning Model')
+    st.title('📝 Translation Application for Documents')
 
     api_key = st.text_input('Your OpenAI Key', placeholder="Enter Your key")
     os.environ["OPENAI_API_KEY"] = api_key
