@@ -28,84 +28,9 @@ Step 2:
 <br>
 
 
-### Approach To the Solution
-Before going to a solution, we need to understand the limitations:
-<br>
-Start
-|
-|--- Import necessary libraries
-|
-|--- Define function: extract_text_from_pdf(pdf_file)
-|      |
-|      |--- Open PDF file
-|      |--- Iterate through pages
-|      |--- Extract text from each page
-|      |--- Return extracted text
-|
-|--- Define function: extract_text_from_docx(docx_file)
-|      |
-|      |--- Open DOCX file
-|      |--- Iterate through paragraphs
-|      |--- Extract text from each paragraph
-|      |--- Return extracted text
-|
-|--- Define function: translate_text(text, source_lang='en', target_lang='de')
-|      |
-|      |--- Create Translator object
-|      |--- Translate text from source language to target language
-|      |--- Return translated text
-|
-|--- Define function: main()
-|      |
-|      |--- Streamlit interface title: Translation Application for Documents [English to German]
-|      |
-|      |--- Prompt user to upload file (PDF or DOCX)
-|      |
-|      |--- If file is uploaded:
-|      |       |
-|      |       |--- Check file extension
-|      |       |       |
-|      |       |       |--- If PDF:
-|      |       |       |       |
-|      |       |       |       |--- Extract text from PDF file
-|      |       |       |
-|      |       |       |--- If DOCX:
-|      |       |       |       |
-|      |       |       |       |--- Extract text from DOCX file
-|      |       |
-|      |       |--- Translate extracted text from English to German
-|      |       |
-|      |       |--- Provide a download button for the translated document
-|      |
-|      |--- Call main function
-|
-|--- End
-
-
-•	**Token limitations:** A Chat-gpt3-like model has token limitations of 4096 to be precise.This means that they can only process a certain number of words at a time. This can make it difficult to summarize longer documents.
-<br>
-
-•	**Memory issues:** As with other language models, Chat GPT models may have difficulty retaining information over a long conversation or summarization task. This can lead to the model producing a summary that differs from the original text or misses important details.
-<br>
-
-•	**Hallucinations:** Chat GPT models have been known to "hallucinate" or generate text that is not directly related to the input. This can lead to inaccurate or misleading summaries.
-<br>
-
-• **Limited understanding:** Chat GPT models may struggle with understanding the context and nuances of the text, particularly in cases where the language is highly technical or specialized. This can lead to inaccurate or incomplete summaries.	These LLMs have large amounts of data from different fields and certain terminologies might mean something or a particular field and something else for the other.
-
-### Solution
-•	Our goal is to create a Summarization tool that takes the long text and gives concise output. But during summarization we do not want to hit the token limit, for we take the .txt file and **divide it into chunks** so that it fits in the **size of the token** and we embed these chunks with **openai embeddings**.
-
-•	As these models have **memory issues** after embedding the chunks, we make a **semantic index of these embeddings** and store them in a **vector database** this can solve the memory issue.
-
-•	As for **hallucination**, we set the **temperature** of the model at a **minimum** as we do not need much creativity and need only to summarize the given file .
-
-•	For this issue I made the LLMs access to the **knowledge base** of the model only to return output and if some terminology is asked it will reply based on the knowledge base provided. 
-
-
-### The architecture of the model
+### Code Skeleton To the Solution
  
-![](https://github.com/singhjaspreetb/Summerization-LLM/blob/master/Arch.png)     
+![](https://github.com/pythonistadeepak/doc_translation/blob/main/img1.PNG)     
 
 ### Usage Instruction:
 1. [Go the hosted application](https://doctranslation-by-deepak.streamlit.app/)
