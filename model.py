@@ -1,45 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
 
 # This code implements the translation of documents with .docx and .pdf formats using Streamlit, PyPDF2, deep-translator, reportlab and python-docx libraries.
 # It allows users to upload a PDF or word file, extract text from it, and then translate it from ENGLISH to GERMAN without using any LLMs
 # User can download the translated document using DOWNLOAD button at Streamlit interface.
 
-
-# In[ ]:
-
-
-# !pip install streamlit
-# !pip install googletrans==3.1.0a0
-# !pip install PyPDF2
-# !pip install python-docx
-
-# !pip install reportlab==4.2.0
-
-
-# In[ ]:
-
-
-
-
-
-# In[1]:
-
-
 import streamlit as st
 from googletrans import Translator
 import os
-# from io import BytesIO
-# from reportlab.lib.pagesizes import letter
-# from reportlab.pdfgen import canvas
 from PyPDF2 import PdfReader
 from docx import Document
-
-
-# In[2]:
 
 
 def extract_text_from_pdf(pdf_file):
@@ -51,31 +22,12 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 
-# In[3]:
-
-
 def extract_text_from_docx(docx_file):
     doc = Document(docx_file)
     text = ''
     for paragraph in doc.paragraphs:
         text += paragraph.text
     return text
-
-
-# In[4]:
-
-
-# text = extract_text_from_docx("ARTICLE - Critical Parameters to Monitor for Deployed AI Models - ORGINAL.docx")
-# msg_pdf = extract_text_from_pdf("ARTICLE - Critical Parameters to Monitor for Deployed AI Models.pdf")
-
-
-# In[ ]:
-
-
-
-
-
-# In[5]:
 
 
 def translate_text(text, source_lang='en', target_lang='de'):
@@ -96,21 +48,6 @@ def translate_text(text, source_lang='en', target_lang='de'):
   return translation.text
 
 
-# In[ ]:
-
-
-
-
-
-# In[7]:
-
-
-
-
-
-# In[ ]:
-
-
 def main():
     st.title('📝 Translation Application for Documents [English to German]')
     
@@ -128,16 +65,7 @@ def main():
             return
         
         translated_text = translate_text(text)
-#         st.write("Translated text TESTING:")
-#         st.write(translated_text)
         st.download_button(label="SUBMIT", data=translated_text, file_name='translated_document.txt', help='Submit File for Translation')
 
 if __name__ == '__main__':
     main()
-
-
-# In[ ]:
-
-
-
-
