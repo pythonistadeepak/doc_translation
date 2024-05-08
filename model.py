@@ -127,11 +127,16 @@ def main():
             return
         
         translated_text = translate_text(text)
-        st.write("Translated text TESTING:")
-        st.write(translated_text)
-
-        st.write("Translation Completed and Ready for Download")
+#         st.write("Translated text TESTING:")
+#         st.write(translated_text)
         st.download_button(label="SUBMIT", data=translated_text, file_name='translated_document.txt', help='Submit File for Translation')
 
 if __name__ == '__main__':
     main()
+
+
+# In[ ]:
+
+
+
+
