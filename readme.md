@@ -2,16 +2,15 @@
 
 ### [Get started](https://doctranslation-by-deepak.streamlit.app/) 
 
-This is a web app to **Summarize long text documents** and **Ask question** on that document. 
+This is a web app to **Translate documents (.docx and .pdf) from Engish to German Langauge** and **Automatically download translated document upon user Submission**. 
 
 <br> 
 Technologies used to built are: 
 <br>  
 
-- [Langchain](https://python.langchain.com/en/latest/index.html) framework<br>
-- [FAISS](https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/) Vector Database<br> 
+- [Python]<br>
 - [Steamlit](https://docs.streamlit.io/) framework.<br>
-- [OpenAi](https://platform.openai.com/docs/introduction) Api<br>
+ NO LLM have been used in the solution
 
 ### Setup for running on local machine
 
