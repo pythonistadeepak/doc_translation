@@ -13,10 +13,11 @@
 
 
 # !pip install streamlit
-# !pip install reportlab
+# !pip install googletrans==3.1.0a0
 # !pip install PyPDF2
 # !pip install python-docx
-# !pip install googletrans==3.1.0a0
+
+# !pip install reportlab==4.2.0
 
 
 # In[ ]:
@@ -31,9 +32,9 @@
 import streamlit as st
 from googletrans import Translator
 import os
-from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
+# from io import BytesIO
+# from reportlab.lib.pagesizes import letter
+# from reportlab.pdfgen import canvas
 from PyPDF2 import PdfReader
 from docx import Document
 
