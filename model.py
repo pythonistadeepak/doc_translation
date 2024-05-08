@@ -131,7 +131,6 @@ def main():
         st.write(translated_text)
 
         st.write("Translation Completed and Ready for Download")
-        st.download_button("Download some text", text_contents)
         st.download_button(label="SUBMIT", data=translated_text, file_name='translated_document.txt', help='Submit File for Translation')
 
 if __name__ == '__main__':
