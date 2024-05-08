@@ -1,6 +1,6 @@
 
 
-### [Get started](https://bzsmrf.github.io/Summerize/) 
+### [Get started](https://doctranslation-by-deepak.streamlit.app/) 
 
 This is a web app to **Summarize long text documents** and **Ask question** on that document. 
 
