@@ -30,7 +30,9 @@ Step 2:
 
 ### Code Skeleton To the Solution
  
-![](https://github.com/pythonistadeepak/doc_translation/blob/main/img1.PNG)     
+![](https://github.com/pythonistadeepak/doc_translation/blob/main/img1.PNG)
+![](https://github.com/pythonistadeepak/doc_translation/blob/main/img2.PNG) 
+![](https://github.com/pythonistadeepak/doc_translation/blob/main/img3.PNG) 
 
 ### Usage Instruction:
 1. [Go the hosted application](https://doctranslation-by-deepak.streamlit.app/)
