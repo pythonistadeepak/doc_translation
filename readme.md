@@ -24,74 +24,9 @@ Step 1:
 
 Step 2:
 
-- Install [Python](https://youtu.be/0QibxSdnWW4) on your system 
+- Install all necessary libraries from requirements.txt
 <br>
 
-Step 3:
-
-<br>
-
-- Install [langchain](https://python.langchain.com/en/latest/getting_started/getting_started.html)
-<br>
-
-```
-pip install langchain 
-#or
-conda install langchain -c conda-forge
-
-```
-<br>
-Step 4:
-
-
-<br>
-
-- Install [openai](https://platform.openai.com/docs/introduction)
-```
-pip install openai
-```
-<br>
-Step 5:
-
-<br>
-
-- Install [PyPDF2](https://pypdf2.readthedocs.io/en/3.0.0/user/installation.html)
-```
-pip install PyPDF2
-```
-<br>
-Step 6:
-
-
-<br>
-
-- Install [faiss-cpu](https://faiss.ai/)
-```
-#installing through Conda
-conda install -c pytorch faiss-cpu
-
-```
-<br>
-Step 7:
-
-
-<br>
-
-- Install tiktoken
-```
-pip install tiktoken
-```
-
-<br>
-Step 8:
-
-
-<br>
-
-- Install [streamlit](https://docs.streamlit.io/library/get-started/installation)
-```
-pip install streamlit
-```
 
 ### Approach To the Solution
 Before going to a solution, we need to understand the limitations:
