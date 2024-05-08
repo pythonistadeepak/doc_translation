@@ -8,7 +8,7 @@ This is a web app to **Translate documents (.docx and .pdf) from Engish to Germa
 Technologies used to built are: 
 <br>  
 
-- [Python]<br>
+-  Python <br>
 - [Steamlit](https://docs.streamlit.io/) framework.<br>
  NO LLM have been used in the solution
 
