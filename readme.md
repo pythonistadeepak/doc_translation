@@ -31,6 +31,56 @@ Step 2:
 ### Approach To the Solution
 Before going to a solution, we need to understand the limitations:
 <br>
+Start
+|
+|--- Import necessary libraries
+|
+|--- Define function: extract_text_from_pdf(pdf_file)
+|      |
+|      |--- Open PDF file
+|      |--- Iterate through pages
+|      |--- Extract text from each page
+|      |--- Return extracted text
+|
+|--- Define function: extract_text_from_docx(docx_file)
+|      |
+|      |--- Open DOCX file
+|      |--- Iterate through paragraphs
+|      |--- Extract text from each paragraph
+|      |--- Return extracted text
+|
+|--- Define function: translate_text(text, source_lang='en', target_lang='de')
+|      |
+|      |--- Create Translator object
+|      |--- Translate text from source language to target language
+|      |--- Return translated text
+|
+|--- Define function: main()
+|      |
+|      |--- Streamlit interface title: Translation Application for Documents [English to German]
+|      |
+|      |--- Prompt user to upload file (PDF or DOCX)
+|      |
+|      |--- If file is uploaded:
+|      |       |
+|      |       |--- Check file extension
+|      |       |       |
+|      |       |       |--- If PDF:
+|      |       |       |       |
+|      |       |       |       |--- Extract text from PDF file
+|      |       |       |
+|      |       |       |--- If DOCX:
+|      |       |       |       |
+|      |       |       |       |--- Extract text from DOCX file
+|      |       |
+|      |       |--- Translate extracted text from English to German
+|      |       |
+|      |       |--- Provide a download button for the translated document
+|      |
+|      |--- Call main function
+|
+|--- End
+
 
 •	**Token limitations:** A Chat-gpt3-like model has token limitations of 4096 to be precise.This means that they can only process a certain number of words at a time. This can make it difficult to summarize longer documents.
 <br>
