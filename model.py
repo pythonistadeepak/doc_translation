@@ -1,6 +1,33 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[ ]:
+
+
+# This code implements the translation of documents with .docx and .pdf formats using Streamlit, PyPDF2, deep-translator, reportlab and python-docx libraries.
+# It allows users to upload a PDF or word file, extract text from it, and then translate it from ENGLISH to GERMAN without using any LLMs
+# User can download the translated document using DOWNLOAD button at Streamlit interface.
+
+
+# In[ ]:
+
+
+# !pip install streamlit
+# !pip install reportlab
+# !pip install PyPDF2
+# !pip install python-docx
+# !pip install googletrans==3.1.0a0
+
+
+# In[ ]:
+
+
+
+
+
+# In[1]:
+
+
 import streamlit as st
 from googletrans import Translator
 import os
@@ -9,6 +36,9 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from PyPDF2 import PdfReader
 from docx import Document
+
+
+# In[2]:
 
 
 def extract_text_from_pdf(pdf_file):
@@ -20,12 +50,31 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 
+# In[3]:
+
+
 def extract_text_from_docx(docx_file):
     doc = Document(docx_file)
     text = ''
     for paragraph in doc.paragraphs:
         text += paragraph.text
     return text
+
+
+# In[4]:
+
+
+# text = extract_text_from_docx("ARTICLE - Critical Parameters to Monitor for Deployed AI Models - ORGINAL.docx")
+# msg_pdf = extract_text_from_pdf("ARTICLE - Critical Parameters to Monitor for Deployed AI Models.pdf")
+
+
+# In[ ]:
+
+
+
+
+
+# In[5]:
 
 
 def translate_text(text, source_lang='en', target_lang='de'):
@@ -46,13 +95,19 @@ def translate_text(text, source_lang='en', target_lang='de'):
   return translation.text
 
 
-def generate_pdf(text):
-    buffer = BytesIO()
-    pdf = canvas.Canvas(buffer, pagesize=letter)
-    pdf.drawString(100, 750, text)
-    pdf.save()
-    buffer.seek(0)
-    return buffer
+# In[ ]:
+
+
+
+
+
+# In[7]:
+
+
+
+
+
+# In[ ]:
 
 
 def main():
@@ -72,13 +127,12 @@ def main():
             return
         
         translated_text = translate_text(text)
-        st.write("Translated text:")
+        st.write("Translated text TESTING:")
         st.write(translated_text)
 
-        st.write("Download translated PDF:")
-        with st.spinner('Generating PDF...'):
-            output_file = generate_pdf(translated_text)
-        st.download_button(label="Download", data=output_file, file_name='translated_document.pdf', mime='application/pdf', key='download-pdf')
+        st.write("Translation Completed and Ready for Download")
+        st.download_button("Download some text", text_contents)
+        st.download_button(label="SUBMIT", data=translated_text, file_name='translated_document.txt', help='Submit File for Translation')
 
 if __name__ == '__main__':
     main()
